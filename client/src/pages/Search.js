@@ -1,24 +1,27 @@
+import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron"
 
 
-const Home = () => {
+
+
+const Search = () => {
     return (
       <Container fluid>
           <Jumbotron>
               Is this working? 
           </Jumbotron>
-        <Row>
+        {/* <Row>
           <Col size="md-6">
             <CreatePostForm />
           </Col>
           <Col size="md-6 sm-12">
             <PostsList />
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     );
   };
   
-  export default Home;
+  export default Search;
   
