@@ -1,27 +1,29 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
+=======
+import React from 'react';
+>>>>>>> 1683f7b6d88beaec506cf8b5ea6d98247b4010f1
 import axios from 'axios';
 import Search from "./pages/Search"
-import { BrowserRouter as Route, Switch, Router} from "react-router-dom"
-
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
 function App() {
   return (
-    // <div className="App">
-    //   <div className="App-header">
-    //     <h2>Welcome to React</h2>
-    //   </div>
-    //   <p className="App-intro">
-    //     To get started, edit <code>src/App.js</code> and save to reload.
-    //   </p>
-    // </div>
     <Router>
+<<<<<<< HEAD
       <Search/>
       <Switch>
       <Route exact path="/" component={Search} />
       </Switch>
+=======
+      <div>
+        <Switch>
+          <Route exact path="/" component={Search} />
+        </Switch>
+      </div>
+>>>>>>> 1683f7b6d88beaec506cf8b5ea6d98247b4010f1
     </Router>
   );
 }
-
 
 export default App;
