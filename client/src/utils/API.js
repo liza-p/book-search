@@ -12,5 +12,6 @@ export default {
     // Will be used to delete a book from the database by Mongo `_id`
     deletePost: function(id) {
         return axios.delete("/api/books/:id" + id);
-    }
+    },
+    
 };
