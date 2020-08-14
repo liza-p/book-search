@@ -1,7 +1,8 @@
 const axios = require("axios");
 const router = require("express").Router();
 
-router.get("/recipes", (req, res) => {
+// matches with URL route '/api/books/search' 
+router.get("/search", (req, res) => {
     axios
       .get("https://www.googleapis.com/books/v1/volumes?q=<Book Name>", { params: req.query })
       .then(({ data: { results } }) => res.json(results))
