@@ -3,7 +3,8 @@ import {
   UPDATE_RESULTS,
   UPDATE_BOOKS,
   ADD_BOOK,
-  REMOVE_BOOK
+  REMOVE_BOOK,
+  LOADING
 } from "./actions";
 
 const BookContext = createContext();
@@ -14,19 +15,22 @@ const reducer = (state, action) => {
   case UPDATE_RESULTS:
     return {
       ...state,
-      results: [...action.results]
+      results: [...action.results],
+      loading: false
     };
 
   case UPDATE_BOOKS:
     return {
       ...state,
-      books: [...action.books]
+      books: [...action.books],
+      loading: false
     };
 
   case ADD_BOOK:
     return {
       ...state,
-      books: [action.book, ...state.books]
+      books: [action.book, ...state.books],
+      loading: false
     };
 
   case REMOVE_BOOK:
@@ -35,6 +39,12 @@ const reducer = (state, action) => {
       books: state.books.filter(book => {
         return book._id !== action._id;
       })
+    };
+
+  case LOADING:
+    return {
+      ...state,
+      loading: true
     };
 
   default:
@@ -46,6 +56,7 @@ const BookProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
     results: [], // search results from Google Books
     books: [], // favorites saved to MongoDB
+    loading: false
   });
 
   return <Provider value={[state, dispatch]} {...props} />;
