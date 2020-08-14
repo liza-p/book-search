@@ -1,14 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import Search from "./pages/Search"
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom"
 
 function App() {
   return (
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={Search} />
+          <Redirect exact path="/" to="/search" />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/saved" component={Search} />
         </Switch>
       </div>
     </Router>
