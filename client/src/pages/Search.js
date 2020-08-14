@@ -3,16 +3,15 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
-import inputSearch from "../components/SearchForm";
+import InputSearch from "../components/inputSearch";
 
 const Search = () => {
     return (
       <Container fluid>
-          <Navbar></Navbar>
-          <Jumbotron>
-          </Jumbotron>
-          <inputSearch></inputSearch>
-          <Card></Card>
+          <Navbar />
+          <Jumbotron />
+          <InputSearch />
+          <Card />
       </Container>
     );
   };
