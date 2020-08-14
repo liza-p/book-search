@@ -15,6 +15,7 @@ function App() {
     //   </p>
     // </div>
     <Router>
+      <Search/>
       <Switch>
       <Route exact path="/" component={Search} />
       </Switch>
