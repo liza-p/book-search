@@ -12,16 +12,30 @@ const { Provider } = BookProvider;
 const reducer = (state, action) => {
   switch (action.type) {
   case UPDATE_RESULTS:
-    return state;
+    return {
+      ...state,
+      results: [...action.results]
+    };
 
   case UPDATE_BOOKS:
-    return state;
+    return {
+      ...state,
+      books: [...action.books]
+    };
 
   case ADD_BOOK:
-    return state;
+    return {
+      ...state,
+      books: [action.book, ...state.books]
+    };
 
-  case REMOVE_POST:
-    return state;
+  case REMOVE_BOOK:
+    return {
+      ...state,
+      books: state.books.filter(book => {
+        return book._id !== action._id;
+      })
+    };
 
   default:
     return state;
