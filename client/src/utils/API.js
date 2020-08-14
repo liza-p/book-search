@@ -2,16 +2,19 @@ import axios from "axios";
 
 export default {
     // Should return all saved books as JSON
-    getPosts: function() {
+    getBooks: function() {
         return axios.get("/api/books");
     },
-    // Will be used to save a new book to the database with the given id
-    getPost: function(id) {
+    // Will be used to get details about a book from the database with the given id
+    getBook: function(id) {
         return axios.get("/api/books/" + id);
     },
+    // Will be used to save a new book
+    addBook: function() {
+      return axios.post("/api/books");
+    },
     // Will be used to delete a book from the database by Mongo `_id`
-    deletePost: function(id) {
+    deleteBook: function(id) {
         return axios.delete("/api/books/:id" + id);
     },
-    
 };
