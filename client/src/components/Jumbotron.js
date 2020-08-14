@@ -7,6 +7,7 @@ function Jumbotron({ children }) {
       className="jumbotron border border-success"
     >
       {children}
+
     </div>
   );
 }

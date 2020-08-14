@@ -2,7 +2,8 @@ import React from 'react';
 
 function Card() {
     return(
-    <div className="card mb-3" style="max-width: 540px;">
+    <div className="card mb-3" 
+    style={{ maxWidth: 540}}>
     <div className="row no-gutters">
         <div className="col-md-4">
         <img src="..." className="card-img" alt="..." /> 
