@@ -6,8 +6,8 @@ function Footer() {
 
   return (
 
-<footer class="footer fixed-bottom">
-      <div class="container text-center">
+<footer className="footer fixed-bottom">
+      <div className="container text-center">
         <span>&copy;Google books</span>
       </div>
     </footer>
