@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron"
+import Jumbotron from "../components/Jumbotron";
+import Navbar from "../components/Navbar"
 
 
 
@@ -8,8 +9,8 @@ import Jumbotron from "../components/Jumbotron"
 const Search = () => {
     return (
       <Container fluid>
+          <Navbar></Navbar>
           <Jumbotron>
-              Is this working? 
           </Jumbotron>
         {/* <Row>
           <Col size="md-6">
