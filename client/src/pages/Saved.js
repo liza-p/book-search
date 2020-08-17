@@ -3,7 +3,7 @@ import Jumbotron from "../components/Jumbotron";
 import Nav from "../components/Navbar";
 import { Container } from "../components/Grid";
 import Card from "../components/Card";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {useBookContext} from "../utils/GlobalState";
 import { LOADING, UPDATE_BOOKS, ADD_BOOK, REMOVE_BOOK} from "../utils/actions";
 
