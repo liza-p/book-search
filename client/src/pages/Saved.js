@@ -7,9 +7,9 @@ import Card from "../components/Card";
 const Saved = () => {
     return (
         <Container fluid>
-            <Nav></Nav>
-            <Jumbotron></Jumbotron>
-            <Card></Card>
+            <Nav />
+            <Jumbotron />
+            <Card />
         </Container>
     )
 }
