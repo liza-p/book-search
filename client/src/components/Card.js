@@ -1,5 +1,8 @@
 import React from 'react';
 import "./Card.css";
+import {useBookContext} from "../utils/GlobalState";
+import {ADD_BOOK} from "../utils/actions";
+import API from "../utils/API";
 
 export function CardList({ children }) {
     return <ul className="list-group">{children}</ul>;
@@ -11,7 +14,19 @@ export function Card({
     author,
     description,
     href
-}) {
+}) 
+
+{
+    const handleSave = () => {
+        console.log("save clicked");
+        const savedBook = {title: title, author: author, description: description, link: href, img:thumbnail};
+        console.log(savedBook);
+        API.addBook(savedBook).then(res => {
+            console.log("res.data = " + res.data);
+        })
+    }
+
+
     return (
         <li className="list-group-item">
             <div className="card mb-12">
@@ -26,7 +41,7 @@ export function Card({
                     <div className="col-md-8">
                         {/* <div className="card-body"> */}
                             <a type="button" className="btn btn-primary btn-sm float-right" href={href} target="_"> View</a>
-                            <button type="button" className="btn btn-danger btn-sm float-right"> Save</button>
+                             <button type="button" className="btn btn-danger btn-sm float-right"onClick={handleSave}> Save</button>
                             <p className="card-text">Book summary{description}</p>
                         {/* </div> */}
                     </div>
