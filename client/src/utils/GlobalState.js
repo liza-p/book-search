@@ -8,7 +8,7 @@ import {
 } from "./actions";
 
 const BookContext = createContext();
-const { Provider } = BookProvider;
+const { Provider } = BookContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
