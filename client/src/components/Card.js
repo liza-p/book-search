@@ -19,7 +19,7 @@ export function Card({
 {
     const handleSave = () => {
         console.log("save clicked");
-        const savedBook = {title: title, author: author, description: description, link: href, img:thumbnail};
+        const savedBook = {title: title, author: author, description: description, link: href, image:thumbnail};
         console.log(savedBook);
         API.addBook(savedBook).then(res => {
             console.log("res.data = " + res.data);
