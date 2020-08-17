@@ -15,6 +15,16 @@ const Saved = () => {
         dispatch({ type: UPDATE_BOOKS});
     };
 
+    const updateSaved = () => {
+        dispatch({ type: ADD_BOOK})
+    }
+
+    const removeSaved = () => {
+        dispatch({ 
+            type: REMOVE_BOOK,
+        })
+    }
+
     useEffect(() => {
         getSaved();
     }, []);
