@@ -5,23 +5,24 @@ import { Container } from "../components/Grid";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import {useBookContext} from "../utils/GlobalState";
-import { LOADING, UPDATE_BOOKS, ADD_BOOK, REMOVE_BOOK} from "../utils/actions";
+import { LOADING, UPDATE_BOOKS, REMOVE_BOOK} from "../utils/actions";
+import API from "../utils/API";
 
 const Saved = () => {
     const [state, dispatch] = useBookContext();
 
     const getSaved = () => {
-        dispatch({ type: LOADING});
-        dispatch({ type: UPDATE_BOOKS});
+        dispatch({ type: LOADING})
+        API.getBooks()
+            .then(res => {
+                dispatch({ type: UPDATE_BOOKS, books: res.data});
+                });
     };
 
-    const updateSaved = () => {
-        dispatch({ type: ADD_BOOK})
-    }
-
-    const removeSaved = () => {
+    const removeSaved = (id) => {
         dispatch({ 
             type: REMOVE_BOOK,
+            _id: id
         })
     }
 
