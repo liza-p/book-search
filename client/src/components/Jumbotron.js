@@ -7,7 +7,7 @@ function Jumbotron({ children }) {
       className="jumbotron border border-dark"
     >
       {children}
-      <h1> Google Books Search</h1>
+      <h1> (React) Google Books Search</h1>
       <h2>Search for and Save Books of Interest</h2>
 
     </div>
