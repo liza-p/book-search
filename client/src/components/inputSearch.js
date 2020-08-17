@@ -1,17 +1,38 @@
-import React from "react";
-
+import React, { useRef, useState} from "react";
+import { useBookContext } from "../utils/GlobalState";
+import {UPDATE_RESULTS } from "../utils/actions";
+import API from '../utils/API';
 
 function inputSearch() {
+    const [state, dispatch]= useBookContext()
+    const searchQuery = useRef()
+
+    const handleSearch = event => {
+        event.preventDefauls();
+        console.log("calling handleSearch");
+
+        API.searchBooks(searchQuery.current.value).then(response => {
+            searchQuery.current.value = ""
+            
+            dispatch ({type: UPDATE_RESULTS, results:response.data})
+
+        })
+
+
+    }
+
+
     return (
-        <div className="card">
-        <div className="card-body">
-        <div className="input-group mb-3">
-        <div className="input-group-prepend">
-            <span className="input-group-text" id="inputGroup-sizing-default">Search</span>
-        </div>
-        <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" />
-        </div>
-        </div>
+        <div className="ml-2">
+            <form>
+                <div className="form-group">
+                    <input type="text" class="form-control" 
+                        ref={searchQuery}
+                        placeholder="Search by title here!"
+                    />
+                </div>
+                <button type="button ml-2" className="btn btn-success" onClick={event => handleSearch(event)}>Search</button>
+            </form>
         </div>
     )
 }
