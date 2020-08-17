@@ -13,10 +13,10 @@ function Navbar({ children }) {
   <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
       <li className="nav-item active">
-        <a className="nav-link" href="/">Search <span className="sr-only">(current)</span></a>
+        <a className="nav-link" href="#">Search <span className="sr-only">(current)</span></a>
       </li>
-      <li className="nav-item">
-        <a className="nav-link" href="/Saved">Saved</a>
+      <li className="nav-item active">
+        <a className="nav-link" href="#">Saved</a>
       </li>
     </ul>
   </div>
