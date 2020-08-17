@@ -9,12 +9,15 @@ export default {
     getBook: function(id) {
         return axios.get("/api/books/" + id);
     },
+    searchBooks: function(bookSearch) {
+        return axios.get(bookSearch + ': /api/books/search?q=' + bookSearch)
+    },
     // Will be used to save a new book
     addBook: function() {
       return axios.post("/api/books");
     },
     // Will be used to delete a book from the database by Mongo `_id`
     deleteBook: function(id) {
-        return axios.delete("/api/books/:id" + id);
+        return axios.delete("/api/books/" + id);
     },
 };
