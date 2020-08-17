@@ -25,8 +25,8 @@ export function Card({
                     </div>
                     <div className="col-md-8">
                         {/* <div className="card-body"> */}
-                            <button type="button" class="btn btn-primary btn-sm float-right" src={href} target="#"> View</button>
-                            <button type="button" class="btn btn-danger btn-sm float-right"> Save</button>
+                            <a type="button" className="btn btn-primary btn-sm float-right" href={href} target="_"> View</a>
+                            <button type="button" className="btn btn-danger btn-sm float-right"> Save</button>
                             <p className="card-text">Book summary{description}</p>
                         {/* </div> */}
                     </div>

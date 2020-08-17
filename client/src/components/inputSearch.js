@@ -23,7 +23,7 @@ function inputSearch() {
         <div className="ml-2">
             <form>
                 <div className="form-group">
-                    <input type="text" class="form-control" 
+                    <input type="text" className="form-control" 
                         ref={searchQuery}
                         placeholder="Search by title here!"
                     />
