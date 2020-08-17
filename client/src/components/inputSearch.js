@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function inputSearch() {
+function inputSearch(props) {
     return (
         <div className="card">
         <div className="card-body">
@@ -9,7 +9,7 @@ function inputSearch() {
         <div className="input-group-prepend">
             <span className="input-group-text" id="inputGroup-sizing-default">Search</span>
         </div>
-        <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+        <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" {...props} />
         </div>
         </div>
         </div>
