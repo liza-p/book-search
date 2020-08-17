@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Card.css";
 
-export function cardList({ children }) {
+export function CardList({ children }) {
     return <ul className="list-group">{children}</ul>;
 }
 
@@ -36,4 +36,4 @@ export function Card({
     );
 }
 
-export default Card;
+// export default Card;
