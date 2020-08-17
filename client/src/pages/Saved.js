@@ -34,7 +34,20 @@ const Saved = () => {
             <Container fluid>
                 <Nav />
                 <Jumbotron />
-                <Card />
+                <CardList>
+                {state.books.map(book => {
+                  return (
+                    <Card
+                      key={book.link}
+                      title={book.title}
+                      href={book.link}
+                      author={book.author}
+                      thumbnail={book.image}
+                      description={book.description}
+                    />
+                  );
+                })}
+              </CardList>
             </Container>
         );
 
