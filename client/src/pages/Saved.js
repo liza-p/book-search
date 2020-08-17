@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Nav from "../components/Navbar";
 import { Container } from "../components/Grid";
-import Card from "../components/Card";
+import {CardList, Card} from "../components/Card";
 import { Link } from "react-router-dom";
 import {useBookContext} from "../utils/GlobalState";
 import { LOADING, UPDATE_BOOKS, REMOVE_BOOK} from "../utils/actions";
