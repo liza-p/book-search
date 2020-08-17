@@ -1,3 +1,7 @@
 button {
  margin-left: 10px;
 }
+.card-img {
+    height: 200px;
+    width: 150px;
+}
