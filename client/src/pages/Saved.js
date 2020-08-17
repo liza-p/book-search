@@ -44,6 +44,8 @@ const Saved = () => {
                       author={book.author}
                       thumbnail={book.image}
                       description={book.description}
+                      isSaved={true}
+                      id={book._id}
                     />
                   );
                 })}

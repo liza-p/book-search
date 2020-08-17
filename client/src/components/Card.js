@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Card.css";
 import {useBookContext} from "../utils/GlobalState";
+import {REMOVE_BOOK} from "../utils/actions";
 import {ADD_BOOK} from "../utils/actions";
 import API from "../utils/API";
 
@@ -13,17 +14,26 @@ export function Card({
     title,
     author,
     description,
-    href
+    href,
+    isSaved, 
+    id
 }) 
 
 {
+    const [state, dispatch]= useBookContext()
     const handleSave = () => {
         console.log("save clicked");
-        const savedBook = {title: title, author: author, description: description, link: href, image:thumbnail};
+        const savedBook = {title: title, author: author, description: description, link: href, image:thumbnail };
         console.log(savedBook);
         API.addBook(savedBook).then(res => {
             console.log("res.data = " + res.data);
         })
+    }
+
+    const handleDelete = () =>{
+        API.deleteBook(id)
+        dispatch({type: REMOVE_BOOK, _id: id})
+
     }
 
 
@@ -41,7 +51,9 @@ export function Card({
                     <div className="col-md-8">
                         {/* <div className="card-body"> */}
                             <a type="button" className="btn btn-primary btn-sm float-right" href={href} target="_"> View</a>
-                             <button type="button" className="btn btn-danger btn-sm float-right"onClick={handleSave}> Save</button>
+                             {isSaved ? 
+                              <button type="button" className="btn btn-danger btn-sm float-right"onClick={handleDelete}>Delete</button> :
+                              <button type="button" className="btn btn-success btn-sm float-right"onClick={handleSave}>Save</button>}
                             <p className="card-text">Book summary{description}</p>
                         {/* </div> */}
                     </div>
