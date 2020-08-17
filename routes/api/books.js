@@ -8,7 +8,16 @@ router.get("/search", (req, res) => {
   // console.log(req.query);
   axios
     .get("https://www.googleapis.com/books/v1/volumes/?q=" + req.query.q)
-    .then(({ data: { items } }) => res.json(items))
+    .then(({ data: { items } }) => {
+      const bookObjects = items.map(item => ({
+        title: item.volumeInfo.title,
+        author: item.volumeInfo.authors.join(", "),
+        description: item.volumeInfo.description,
+        image: item.volumeInfo.imageLinks.thumbnail,
+        link: item.volumeInfo.previewLink,
+      }));
+      return res.json(bookObjects)
+    })
     .catch(err => res.status(422).json(err));
   });
   module.exports = router;
