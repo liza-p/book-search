@@ -8,7 +8,7 @@ function inputSearch() {
     const searchQuery = useRef()
 
     const handleSearch = event => {
-        event.preventDefauls();
+        event.preventDefault();
         console.log("calling handleSearch");
 
         API.searchBooks(searchQuery.current.value).then(response => {
@@ -17,10 +17,7 @@ function inputSearch() {
             dispatch ({type: UPDATE_RESULTS, results:response.data})
 
         })
-
-
     }
-
 
     return (
         <div className="ml-2">
