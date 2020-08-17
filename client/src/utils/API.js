@@ -10,7 +10,7 @@ export default {
         return axios.get("/api/books/" + id);
     },
     searchBooks: function(bookSearch) {
-        return axios.get(bookSearch + ': /api/books/search?q=' + bookSearch)
+        return axios.get('/api/books/search?q=' + bookSearch)
     },
     // Will be used to save a new book
     addBook: function() {
