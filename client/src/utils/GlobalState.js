@@ -13,9 +13,25 @@ const { Provider } = BookContext;
 const reducer = (state, action) => {
   switch (action.type) {
   case UPDATE_RESULTS:
+    // make an object with id's from the saved books
+    // for converting Google Book links to database ids
+    const idMap = {};
+    state.books.map(book => {idMap[book.link] = book._id});
+    // console.log(state.books);
+    // console.log(idMap);
+
+    const processedResults = action.results.map(book => {
+      return {
+        ...book,
+        _id: idMap[book.link] || "" // if saved, this will be _id from database, otherwise empty string
+      }
+    });
+
+    // console.log(processedResults);
+
     return {
       ...state,
-      results: [...action.results],
+      results: processedResults,
       loading: false
     };
 
