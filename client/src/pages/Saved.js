@@ -32,7 +32,7 @@ const Saved = () => {
 
         return (
             <Container fluid>
-                <Nav />
+                <Nav page="saved" />
                 <Jumbotron />
                 <CardList>
                 {state.books.map(book => {

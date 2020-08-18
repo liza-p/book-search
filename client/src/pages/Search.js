@@ -10,7 +10,7 @@ const Search = () => {
   const [state, dispatch]= useBookContext()
     return (
       <Container fluid>
-          <Navbar />
+          <Navbar page="search" />
           <Jumbotron />
           <InputSearch />
           <CardList>
