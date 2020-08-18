@@ -15,7 +15,6 @@ export function Card({
     author,
     description,
     href,
-    isSaved, 
     id
 }) 
 
@@ -51,7 +50,7 @@ export function Card({
                     <div className="col-md-8">
                         {/* <div className="card-body"> */}
                             <a type="button" className="btn btn-primary btn-sm float-right ml-1 mr-1" href={href} target="_"> View</a>
-                             {isSaved ? 
+                             {id ? 
                               <button type="button" className="btn btn-danger btn-sm float-right ml-1 mr-1"onClick={handleDelete}>Delete</button> :
                               <button type="button" className="btn btn-success btn-sm float-right ml-1 mr-1"onClick={handleSave}>Save</button>}
                             <p className="card-text">Book summary{description}</p>
