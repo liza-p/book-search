@@ -3,7 +3,7 @@
 This is a React-based Google Books Search application. 
 
 ## Link to the deployed application
-
+[Google books app](https://google-reading.herokuapp.com/)
 
 ## Demo 
 
