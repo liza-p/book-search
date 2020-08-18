@@ -6,6 +6,7 @@ import {
   REMOVE_BOOK,
   LOADING
 } from "./actions";
+import API from "./API";
 
 const BookContext = createContext();
 const { Provider } = BookContext;
@@ -69,11 +70,18 @@ const reducer = (state, action) => {
 }
 
 const BookProvider = ({ value = [], ...props }) => {
+  // define state and dispatch
   const [state, dispatch] = useReducer(reducer, {
     results: [], // search results from Google Books
     books: [], // favorites saved to MongoDB
     loading: false
   });
+
+  // initialize state with books from database (asynchronously)
+  API.getBooks()
+    .then(res => {
+      dispatch({ type: UPDATE_BOOKS, books: res.data});
+    });
 
   return <Provider value={[state, dispatch]} {...props} />;
 };
