@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import { BookProvider } from "./utils/GlobalState";

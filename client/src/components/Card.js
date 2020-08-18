@@ -21,11 +21,8 @@ export function Card({
 {
     const [state, dispatch]= useBookContext()
     const handleSave = () => {
-        // console.log("save clicked");
         const savedBook = {title: title, author: author, description: description, link: href, image:thumbnail };
-        // console.log(savedBook);
         API.addBook(savedBook).then(res => {
-            // console.log(res.data);
             dispatch({type: ADD_BOOK, book: res.data});
         })
     }
@@ -43,19 +40,16 @@ export function Card({
 
                 <div className="row no-gutters">
                     <div className="col-md-4">
-                        <h5 className="card-title">Book Title: {title}</h5>
-                        <p className="card-text">Book Author: {author}</p>
+                        <h5 className="card-title"> {title}</h5>
+                        <p className="card-text">By: {author}</p>
                         <img src={thumbnail} className="card-img" alt="..." />
-                        {/* <Thumbnail src={thumbnail || "https://placehold.it/300x300"} /> */}
                     </div>
                     <div className="col-md-8">
-                        {/* <div className="card-body"> */}
                             <a type="button" className="btn btn-primary btn-sm float-right ml-1 mr-1" href={href} target="_"> View</a>
                              {id ? 
                               <button type="button" className="btn btn-danger btn-sm float-right ml-1 mr-1"onClick={handleDelete}>Delete</button> :
                               <button type="button" className="btn btn-success btn-sm float-right ml-1 mr-1"onClick={handleSave}>Save</button>}
-                            <p className="card-text">Book summary{description}</p>
-                        {/* </div> */}
+                            <p className="card-text">{description}</p>
                     </div>
                 </div>
             </div>
