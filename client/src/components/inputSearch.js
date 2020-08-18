@@ -20,15 +20,16 @@ function inputSearch() {
     }
 
     return (
-        <div className="ml-2">
-            <form>
-                <div className="form-group">
-                    <input type="text" className="form-control" 
+        <div>
+            <form className="container-fluid">
+                <div className="form-group row">
+                    <input type="text" className="form-control col-11" 
                         ref={searchQuery}
-                        placeholder="Search by title here!"
+                        placeholder="Enter book title"
                     />
+                      <button type="button ml-2" className="btn btn-success" onClick={event => handleSearch(event)}>Search</button>
                 </div>
-                <button type="button ml-2" className="btn btn-success" onClick={event => handleSearch(event)}>Search</button>
+              
             </form>
         </div>
     )
