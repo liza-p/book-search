@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import { useStoreContext } from "../../utils/GlobalState";
 
 
-function Navbar({ children }) {
+function Navbar({ children, page }) {
   return (
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,11 +13,11 @@ function Navbar({ children }) {
 
   <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li className="nav-item active">
+      <li className={`nav-item ${page === 'search' ? 'active' : ''}`}>
         <Link className="nav-link" to="/">Search <span className="sr-only">(current)</span></Link>
       </li>
-      <li className="nav-item active">
-        <Link className="nav-link" to="/Saved">Saved</Link>
+      <li className={`nav-item ${page === 'saved' ? 'active' : ''}`}>
+        <Link className="nav-link" to="/saved">Saved</Link>
       </li>
     </ul>
   </div>
