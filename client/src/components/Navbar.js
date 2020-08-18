@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { useStoreContext } from "../../utils/GlobalState";
 
 
 function Navbar({ children, page }) {

@@ -1,4 +1,4 @@
-import React, { useRef, useState} from "react";
+import React, { useRef } from "react";
 import { useBookContext } from "../utils/GlobalState";
 import {UPDATE_RESULTS } from "../utils/actions";
 import API from '../utils/API';
@@ -9,7 +9,6 @@ function inputSearch() {
 
     const handleSearch = event => {
         event.preventDefault();
-        console.log("calling handleSearch");
 
         API.searchBooks(searchQuery.current.value).then(response => {
             searchQuery.current.value = ""
