@@ -1,6 +1,6 @@
 # book-search
 
-![](/public/img/googlebooks.gif)
+![](client/public/img/googlebooks.gif)
 
 
 ## Table of Content
@@ -52,12 +52,24 @@ Then open in your preferred text editor:
 
 
 
-## Author
-### [Liza](https://github.com/liza-p)
+## Contributors
+
+### [Ayla Dillis](https://github.com/ayladillis)
+- [LinkedIn](https://www.linkedin.com/in/ayladillis/)
+- [Portfolio](https://polar-falls-52203.herokuapp.com/)
+- [Highlighted-Work](https://ayladillis.github.io/Coding-Bootcamp-Project-1-Zillow-Maps-API-AD/)
+- email: aayladillis@gmail.com
+### [Hannah Smith](https://github.com/hannahpsmith1)
 - [LinkedIn]()
 - [Portfolio]()
 - [Highlighted-Work]()
-- email: liyourlp@gmail.com
+- email: hannahpsmith1@gmail.com
+
+### [Liza Poliachenko](https://github.com/liza-p)
+- [LinkedIn]()
+- [Portfolio]()
+- [Highlighted-Work]()
+- email: liza.poliachenko@gmail.com
 
 ### [Sierra Chapman](https://github.com/SierraChapman)
 - [LinkedIn]()
@@ -65,14 +77,4 @@ Then open in your preferred text editor:
 - [Highlighted-Work]()
 - email: siechap@gmail.com
 
-### [Hannah Smith](https://github.com/hannahpsmith1)
-- [LinkedIn]()
-- [Portfolio]()
-- [Highlighted-Work]()
-- email: hannahpsmith1@gmail.com
 
-### [Ayla Dillis](https://github.com/ayladillis)
-- [LinkedIn](https://www.linkedin.com/in/ayladillis/)
-- [Portfolio](https://polar-falls-52203.herokuapp.com/)
-- [Highlighted-Work](https://ayladillis.github.io/Coding-Bootcamp-Project-1-Zillow-Maps-API-AD/)
-- email: aayladillis@gmail.com
