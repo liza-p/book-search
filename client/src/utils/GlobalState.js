@@ -44,15 +44,31 @@ const reducer = (state, action) => {
     };
 
   case ADD_BOOK:
+    // update results so that added book in results has the saved _id
+    const newResults = state.results.map(book => ({
+      ...book,
+      // if its the same book, update the _id, otherwise keep it the same
+      _id: (book.link === action.book.link ? action.book._id : book._id)
+    }));
+
     return {
       ...state,
+      results: newResults,
       books: [action.book, ...state.books],
       loading: false
     };
 
   case REMOVE_BOOK:
+    // update results so that removed book in results has an _id of an empty string
+    const updatedResults = state.results.map(book => ({
+      ...book,
+      // if its the same book, set the _id to "", otherwise keep it the same
+      _id: (book._id === action._id ? "" : book._id)
+    }));
+
     return {
       ...state,
+      results: updatedResults,
       books: state.books.filter(book => {
         return book._id !== action._id;
       })

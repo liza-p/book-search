@@ -21,18 +21,19 @@ export function Card({
 {
     const [state, dispatch]= useBookContext()
     const handleSave = () => {
-        console.log("save clicked");
+        // console.log("save clicked");
         const savedBook = {title: title, author: author, description: description, link: href, image:thumbnail };
-        console.log(savedBook);
+        // console.log(savedBook);
         API.addBook(savedBook).then(res => {
-            console.log("res.data = " + res.data);
+            // console.log(res.data);
+            dispatch({type: ADD_BOOK, book: res.data});
         })
     }
 
     const handleDelete = () =>{
-        API.deleteBook(id)
-        dispatch({type: REMOVE_BOOK, _id: id})
-
+        API.deleteBook(id).then(() => {
+            dispatch({type: REMOVE_BOOK, _id: id});
+        });
     }
 
 
