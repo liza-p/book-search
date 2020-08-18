@@ -15,25 +15,25 @@ export function Card({
     author,
     description,
     href,
-    isSaved, 
     id
 }) 
 
 {
     const [state, dispatch]= useBookContext()
     const handleSave = () => {
-        console.log("save clicked");
+        // console.log("save clicked");
         const savedBook = {title: title, author: author, description: description, link: href, image:thumbnail };
-        console.log(savedBook);
+        // console.log(savedBook);
         API.addBook(savedBook).then(res => {
-            console.log("res.data = " + res.data);
+            // console.log(res.data);
+            dispatch({type: ADD_BOOK, book: res.data});
         })
     }
 
     const handleDelete = () =>{
-        API.deleteBook(id)
-        dispatch({type: REMOVE_BOOK, _id: id})
-
+        API.deleteBook(id).then(() => {
+            dispatch({type: REMOVE_BOOK, _id: id});
+        });
     }
 
 
@@ -51,7 +51,7 @@ export function Card({
                     <div className="col-md-8">
                         {/* <div className="card-body"> */}
                             <a type="button" className="btn btn-primary btn-sm float-right ml-1 mr-1" href={href} target="_"> View</a>
-                             {isSaved ? 
+                             {id ? 
                               <button type="button" className="btn btn-danger btn-sm float-right ml-1 mr-1"onClick={handleDelete}>Delete</button> :
                               <button type="button" className="btn btn-success btn-sm float-right ml-1 mr-1"onClick={handleSave}>Save</button>}
                             <p className="card-text">Book summary{description}</p>

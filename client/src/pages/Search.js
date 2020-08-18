@@ -23,7 +23,7 @@ const Search = () => {
                       author={book.author}
                       thumbnail={book.image}
                       description={book.description}
-                      isSaved={false}
+                      id={book._id}
                     />
                   );
                 })}
