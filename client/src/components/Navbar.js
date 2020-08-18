@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import { useStoreContext } from "../../utils/GlobalState";
 
 
@@ -13,10 +14,10 @@ function Navbar({ children }) {
   <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
       <li className="nav-item active">
-        <a className="nav-link" href="/">Search <span className="sr-only">(current)</span></a>
+        <Link className="nav-link" to="/">Search <span className="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item active">
-        <a className="nav-link" href="/Saved">Saved</a>
+        <Link className="nav-link" to="/Saved">Saved</Link>
       </li>
     </ul>
   </div>
